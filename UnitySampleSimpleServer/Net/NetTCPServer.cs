@@ -92,7 +92,7 @@ public class NetTCPServer
             // 获得消息体长度
             stream.DecodeHeader();
 
-            // 下一个读取
+            // 读取Body
             stream._socket.BeginReceive(stream.BYTES, NetBitStream.header_length, stream.BodyLength, SocketFlags.None, new System.AsyncCallback(ReceiveBody), stream);
         }
         catch (System.Exception e)
